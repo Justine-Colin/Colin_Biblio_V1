@@ -14,8 +14,5 @@ namespace Colin_Biblio.Models
         public int IDClient { get; set; }
         [Required]
         public int IDLivre { get; set; }
-        [Required]
-        public DateTime DateEmprunt { get; set; }
-        public DateTime DateRetour { get; set; }
     }
 }

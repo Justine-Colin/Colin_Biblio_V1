@@ -1,0 +1,74 @@
+﻿@using Colin_Biblio.Models
+@model Colin_Biblio.ViewModels.AuteursViewModel
+
+@{
+    ViewBag.Title = "Auteurs";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <style>
+            html 
+            {
+                background-color: floralwhite;
+                font-family: 'Segoe Print';
+                color: midnightblue;
+            }
+
+            table 
+            {
+                border-style: solid;
+                border-width: thin;
+                background-color: antiquewhite
+            }
+
+            .fst 
+            {
+                border-style: solid;
+                border-width: thin;
+                background-color: goldenrod;
+            }
+
+            .scd 
+            {
+                border-style: solid;
+                border-width: thin;
+                background-color: antiquewhite
+            }
+
+            td 
+            {
+                border-style: dotted;
+                border-width: thin;
+                background-color: antiquewhite
+            }
+        </style>
+    </head>
+
+    <body>
+        <table>
+            <tr>
+                <th class="fst" colspan="2">Auteur</th>
+            </tr>
+            <tr>            
+                <th class="scd">Nom</th>
+                <th class="scd">Prénom</th>
+            </tr>
+            @foreach (Auteur auteur in Model.Auteurs)
+            {
+                <tr>
+                    <td>@auteur.Nom</td>
+                    <td>@auteur.Prenom</td>
+                </tr>
+            }
+        </table>
+        <br />
+        <hr />
+        <br />
+        @Html.ActionLink("Retourner à l'accueil", "Index", "Home")
+    </body>
+</html>

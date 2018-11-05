@@ -8,29 +8,34 @@ namespace Colin_Biblio.Models
 {
     public interface IDal : IDisposable
     {
-        //Auteur
+        // Auteur
         List<Auteur> ObtientTousLesAuteurs();
-        void CreerAuteur(string nom, string prenom);
         int AjouterAuteur(string nom, string prenom);
         Auteur ObtenirAuteur(int id);
         void ModifierAuteur(int id, string nom, string prenom);
         bool AuteurExiste(string nom);
+        bool AuteurExiste(int IDauteur);
 
-        //Client
+        // Client
         Client ObtenirClient(int id);
         Client ObtenirClient(string idStr);
-        int AjouterClient(string nom, string email, string motdepasse);
-        Client Authentifier(string nom, string motdepasse);
+        int AjouterClient(string nom, string mail, string motDePasse);
+        Client Authentifier(string nom, string motDePasse);
+        Client AuthentifierMail(string email, string motDePasse);
 
-        //Livre
-        int AjouterLivre(string titre, string dateparution, string auteur);
+        // Livre
+        int AjouterLivre(string titre, DateTime dateParution, int IDauteur);
         Livre ObtenirLivre(int id);
+        List<Livre> ObtenirTousLesLivres();
+        List<Livre> ObtenirLivresAuteur(int IDauteur);
+        bool LivreExiste(int IDlivre);
 
         // Emprunt
-        int AjouterEmprunt(int idClient, int idLivre, DateTime dateEmprunt);
-        void ModifierEmprunt(int id, int idClient, int idLivre, DateTime dateEmprunt, DateTime dateRetour);
-        void ModifierEmprunt(int id, int idClient, int idLivre, DateTime dateEmprunt);
+        int AjouterEmprunt(int idClient, int idLivre);
+        void ModifierEmprunt(int id, int idClient, int idLivre);
         void RetournerEmprunt(int id);
         Emprunt ObtenirEmprunt(int id);
+        List<Emprunt> ObtenirEmpruntsClient(int IDclient);
+        List<Emprunt> ObtenirEmpruntsLivre(int IDlivre);
     }
 }

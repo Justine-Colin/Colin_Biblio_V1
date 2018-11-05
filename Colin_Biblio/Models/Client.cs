@@ -8,6 +8,7 @@ namespace Colin_Biblio.Models
 {
     public class Client
     {
+        [Key]
         public int IdClient { get; set; }
         [Required]
         public string Nom { get; set; }
@@ -15,6 +16,5 @@ namespace Colin_Biblio.Models
         public string Email { get; set; }
         [Required]
         public string MotDePasse { get; set; }
-
     }
 }

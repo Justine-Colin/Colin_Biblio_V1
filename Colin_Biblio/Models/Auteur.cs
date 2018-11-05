@@ -8,6 +8,7 @@ namespace Colin_Biblio.Models
 {
     public class Auteur
     {
+        [Key]
         public int IdAuteur { get; set; }
         [Required]
         public string Nom { get; set; }

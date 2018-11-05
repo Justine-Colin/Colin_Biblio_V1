@@ -8,12 +8,13 @@ namespace Colin_Biblio.Models
 {
     public class Livre
     {
+        [Key]
         public int IdLivre { get; set; }
         [Required]
         public string Titre { get; set; }
         [Required]
-        public string DateParution { get; set; }
+        public DateTime DateParution { get; set; }
         [Required]
-        public string Auteur { get; set; }
+        public int IdAuteur { get; set; }
     }
 }

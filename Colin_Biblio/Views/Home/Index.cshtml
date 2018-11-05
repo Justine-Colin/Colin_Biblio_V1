@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <style>
+            html 
+            {
+                background-color: floralwhite;
+                font-family: 'Segoe Print';
+                color: midnightblue;
+            }
+        </style>
+        <title>Index</title>
+    </head>
+    <body>
+        <h1>Ceci est ma bibliothèque</h1>
+        <h2>A quoi voulez-vous accéder?</h2>
+        <ul>
+            <li>@Html.ActionLink("Afficher la liste des livres", "Index", "Afficher")</li>
+            <li>@Html.ActionLink("Afficher la liste des auteurs", "Auteurs", "Afficher")</li>
+        </ul>
+
+        @if (ViewBag.Message != null)
+        {
+            <p>@ViewBag.Message</p>
+        }
+    </body>
+</html>
+

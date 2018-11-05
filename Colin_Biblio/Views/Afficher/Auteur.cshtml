@@ -1,0 +1,33 @@
+﻿@using Colin_Biblio.Models
+@model Colin_Biblio.ViewModels.AuteurViewModel
+
+@{
+    ViewBag.Title = "Auteur";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <style>
+            html 
+            {
+                background-color: floralwhite;
+                font-family: 'Segoe Print';
+                color: midnightblue;
+            }
+        </style>
+        <title>Auteur</title>
+    </head>
+    <body>
+        <h1>@Model.auteur.Nom @Model.auteur.Prenom</h1>
+        <p>est l'auteur de :</p>
+        <ul>
+         @foreach (Livre livre in Model.livres)
+            {
+                <li>@livre.Titre (@livre.DateParution.ToShortDateString())</li>
+            }
+        </ul>
+    </body>
+</html>

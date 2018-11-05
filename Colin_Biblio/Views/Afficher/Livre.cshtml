@@ -1,0 +1,34 @@
+﻿@using Colin_Biblio.Models
+@model Colin_Biblio.ViewModels.LivreViewModel
+
+@{
+    ViewBag.Title = "Livre";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <style>
+            html
+            {
+                background-color: floralwhite;
+                font-family: 'Segoe Print';
+                color:midnightblue;
+            }
+        </style>
+        <title>Livre</title>
+    </head>
+    <body>
+        <h1>@Model.livre.Titre</h1>
+        <h2>@Model.auteur.Nom @Model.auteur.Prenom</h2>
+        <p>Date de parution : @Model.livre.DateParution.ToShortDateString()</p>
+        <br />
+        <p>Est emprunté par : @(Model.emprunteurActuel != null ? Model.emprunteurActuel.Nom : "N/A")</p>
+        <hr />
+        <br />
+        @Html.ActionLink("Retourner à l'accueil", "Index", "Home")
+    </body>
+</html>
