@@ -168,7 +168,7 @@ namespace Colin_Biblio.Tests
             Assert.IsNull(clientKO);
         }
 
-        //Dates de parution fausse car format datetime va de 01/01/1753 à 31/12/9999
+        //Dates de parution fausse car format datetime dans sql va de 01/01/1753 à 31/12/9999
         [TestMethod]
         public void AjouterLivre_NouveauLivreEtRecuperation_LeLivreEstBienRecupere()
         {
